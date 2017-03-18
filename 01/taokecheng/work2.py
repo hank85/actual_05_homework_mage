@@ -7,7 +7,7 @@ sum = 0
 print('游戏开始，有5次机会猜数字...')
 guest_num = input('请输入你猜测的数字(0-100):  ')
 while True:
-	if len(guest_num.strip()) == 0 or not guest_num.isdigit():
+	if len(guest_num.strip()) == 0 or not guest_num.strip().isdigit():
 		print('-'*40)
 		guest_num = input('错误! 只能输入数字,请重新输入，范围是(0-100)：')
 		continue
