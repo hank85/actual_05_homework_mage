@@ -1,5 +1,6 @@
 #!/usr/local/bin/python3
-# 99cfb
+# 99cfb 三种方法
+
 for i in range(1,10): 
     for j in range(1,1+i):
         print(str(j)+"*"+str(i)+"="+str(i*j),end=" ")
