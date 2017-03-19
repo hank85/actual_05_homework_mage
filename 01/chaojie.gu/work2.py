@@ -1,12 +1,4 @@
 #encoding: utf-8
-i =1
-j=1
-for i in range(1,10):
-    for j in range(1,i+1):
-        print (i,'X',j,'=',i*j,'\t',end='')
-    print()
-[root@localhost pywork]# cat work2.py
-#encoding: utf-8
 import random
 random_num=random.randint(0,100)
 num_put=input('请输入一个1到100之间的数字:')
