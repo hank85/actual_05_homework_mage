@@ -58,11 +58,14 @@ while panduan:
 	i = 1
 	print('随机数：',ran_num)
 	while i < 6:
-		num = int(input("请输入一个猜测数字:"))
-		if num == ran_num:
+		num = input("请输入一个猜测数字，数字取值范围是0到100:")
+		if (len(num) == 0) or (not num.strip().isdigit()):
+			print('输入值不能为空或不是数字，请重新输入')
+			i = i-1
+		elif int(num) == ran_num:
 			print("恭喜你，猜对了!")
 			exit()
-		elif num < ran_num:
+		elif int(num) < ran_num:
 			if (5-i) == 0:
 				print("太笨了，下次再来")
 				break
