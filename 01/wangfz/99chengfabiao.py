@@ -1,11 +1,11 @@
 #encoding:utf-8
 #打印乘法口诀表
-i = 1
-while (i <=9 ):
-    j = 1
-    while j <= i:
-        x = i * j
-        print(j,'*',i,'=',x,"  ",end=" ")
-        j += 1
+n = 1
+while (n <=9 ):
+    x = 1
+    while x <= n:
+        l = n * x
+        print(x,'*',n,'=',l,"  ",end=" ")
+        x += 1
     print("\n")
-    i += 1
+    n += 1
