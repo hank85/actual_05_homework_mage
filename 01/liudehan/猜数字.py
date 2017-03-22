@@ -1,16 +1,16 @@
-#encoding: utf-8
-
-i = 1
-k = 1
-for i in range(1,10):
-    for k in range(1,i+1):
-        print(i,'*',k,"=",k*i,"\t",end='')
-        k += 1
-    print()
-while i <= 9:
-    while k <= i:
-        print(i, '*', k, "=", k * i, "\t", end='')
-        k += 1
-        print ()
-        k = 1
-        i += 1
+#envcoding: utf-8
+import random
+num = random.randint(0,100)
+input_count = 5
+while input_count >= 1:
+    num1 = int(input('请输入1-100以的整数: '))
+    if (num1 > num):
+        print('你猜的数字大了，往小了猜!')
+    elif (num1 < num):
+        print('你猜的数字小了，再往大了猜!')
+    elif (num1 == num):
+        print('恭喜你,猜对了,下次再玩!')
+        break
+    input_count -= 1
+else:
+    print('太笨了,5次都没猜到,正确答案是',(num),'下次再来!')
