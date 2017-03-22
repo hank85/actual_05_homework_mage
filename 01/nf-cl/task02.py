@@ -5,7 +5,7 @@ count=0
 
 #生成随机数
 random_num=random.randint(0,100)
-print(random_num)
+
 #提示用户输入数字
 input_num=float(input('请输入一个0～100的数字：'))
 #进行数字比较
