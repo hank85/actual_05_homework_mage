@@ -1,10 +1,10 @@
-import random
 # encoding: utf-8
+import random
 print('99乘法表')
 list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 for i in list:
     if i - 1 > 0:
-        print(i, '*', i, '=', i * i, end=' ')
+        print(i, '*', i, '=', i * i, end=' ')  # 下一次打印不会换行
     else:
         print(i, '*', i, '=', i * i)
     m = i
