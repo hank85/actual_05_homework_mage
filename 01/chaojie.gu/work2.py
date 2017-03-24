@@ -12,6 +12,7 @@ random_num=random.randint(0,100)
 '''
 import random
 random_num=random.randint(0,100)
+
 count=5
 user_input=input('请猜一个1到100之间的数:')
 while count>=2:
@@ -24,7 +25,13 @@ while count>=2:
             user_input=input('猜小了！你还有'+str(count)+'次机会\n请猜一个1到100之间的数：')
         elif user_input==random_num:
             print('猜中了！恭喜你获得大奖！')
+            break
     else:
         user_input=input('只能输入数字！\n请输入一个1到100之间的数字!')
 else:
     print('你输入的次数太多，请下次再来！')
+
+
+'''
+可以多测试一下, 当猜正确时程序是否可以正确运行，原因是什么，如何修改
+'''

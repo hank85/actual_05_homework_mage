@@ -10,3 +10,9 @@ for i in range(1,10):
 	for j in range(1,i+1):
 		print(j,' * ',i,' =', i*j,'\t',end = '')
 	print('\n')
+
+'''
+功能ok，继续加油
+1. 考虑如何去除空行
+2. 尝试打印上三角
+'''

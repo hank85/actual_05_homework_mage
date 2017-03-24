@@ -22,3 +22,7 @@ while count < 5:
 if count >= 5:
     print('You lose.The number is', random_num)
 
+
+'''
+功能ok， 继续加油
+'''

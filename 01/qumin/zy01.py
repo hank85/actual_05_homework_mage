@@ -16,3 +16,7 @@ while guess!=num and time>=0:
         print("太遗憾了，你猜错了，你还有",time,"次机会")
     time-=1
 print("游戏结束")
+
+'''
+功能ok，继续加油
+'''

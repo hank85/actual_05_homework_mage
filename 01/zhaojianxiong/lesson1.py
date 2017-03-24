@@ -15,6 +15,13 @@ for i in list:
         else:
             print(i, '*', m, '=', i * m, end=' ')
 
+'''
+功能ok，继续加油
+
+1. 考虑如何简化程序
+2. 考虑打印上三角
+3. 变量命名，明天上课看看list是什么
+'''
 
 print('Guess Number')
 i = 1
@@ -29,3 +36,8 @@ while i <= 5:
         print('Guess right')
     i += 1
 print('Too stupid')
+
+'''
+功能稍微有点问题，继续加油
+1. 猜测成功后，为什么还要猜呢，如何退出
+'''

@@ -23,3 +23,6 @@ while count <= tryTimes:
 print('游戏结束')
 
 
+'''
+功能ok，但是随机数呢？太会作假了
+'''

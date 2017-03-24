@@ -5,6 +5,7 @@ count=0
 
 #生成随机数
 random_num=random.randint(0,100)
+print(random_num)
 
 #提示用户输入数字
 input_num=float(input('请输入一个0～100的数字：'))
@@ -38,3 +39,9 @@ while count<=5:
     else:
         print('终于猜对了，恭喜！')
         break
+
+'''
+功能ok，加油
+1. 养成良好习惯，float类型数据不要直接进行==比较，在各个语言中float都使用>, < 和间隔(差)运算比较相近程度
+2. 考虑简化代码
+'''

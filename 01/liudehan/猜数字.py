@@ -14,3 +14,8 @@ while input_count >= 1:
     input_count -= 1
 else:
     print('太笨了,5次都没猜到,正确答案是',(num),'下次再来!')
+
+'''
+功能ok，继续加油
+1. while, if, elif 后的条件表达式可以不用()括起来
+'''

@@ -9,3 +9,8 @@ while right < 10:
         left += 1
     print()
     right += 1
+
+'''
+功能ok， 继续加油
+1. 尝试打印上三角
+'''

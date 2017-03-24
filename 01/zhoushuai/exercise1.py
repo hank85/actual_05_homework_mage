@@ -11,3 +11,8 @@ while right <= max_num:
         left += 1
     left = 1
     right += 1
+
+'''
+功能ok， 继续加油
+1. 考虑打印上三角
+'''

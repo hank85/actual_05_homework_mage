@@ -21,3 +21,7 @@ while count > 1:
     count -= 1
 else:
     print("fool, restart again")
+
+'''
+功能ok，继续加油
+'''

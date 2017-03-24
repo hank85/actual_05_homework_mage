@@ -23,3 +23,7 @@ while count <= 6:
 else:
     print("6次机会已经用完，请重新开始")
     print("正确的数字是：%d" % num1)
+
+'''
+功能ok，继续加油
+'''

@@ -25,3 +25,8 @@ if end > 5 :
 else:
 	print ('你猜了',end,'次')
 exit()
+
+
+'''
+功能ok， 继续加油
+'''

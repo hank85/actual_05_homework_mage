@@ -12,3 +12,9 @@ for i in range(1, 10):
             print("{}x{}={:<3}".format(j, i, i*j), end='')
     print(os.linesep)
 
+
+'''
+功能ok,继续加油
+1. 考虑去除空行
+2. 考虑打印上三角格式
+'''

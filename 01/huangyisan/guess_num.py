@@ -4,7 +4,7 @@
 """
 @version: 1.0
 @author: huangyisan
-@license: Apache Licence 
+@license: Apache Licence
 @file: guess_num.py
 @time: 2017/3/18 22:38
 """
@@ -30,3 +30,7 @@ while count:    #当count自减到0，则跳出。
             print('猜大了')
 else:
     print("\033[1;31;40m太笨了，下次再来 \033[0m")
+
+'''
+功能ok，继续加油
+'''

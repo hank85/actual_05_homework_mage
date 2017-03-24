@@ -18,3 +18,7 @@ while True:
             print('')
     else:
         print('你的输入有误，请重新输入')
+
+'''
+功能ok，继续加油
+'''

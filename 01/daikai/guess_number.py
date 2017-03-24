@@ -23,3 +23,6 @@ if use_times == total_num + 1:
     print("%d次机会都已经用完。太笨了，下次再来猜吧!!!"%total_num)
 
 
+'''
+功能ok，继续加油
+'''
