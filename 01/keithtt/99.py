@@ -3,12 +3,12 @@
 
 for i in range(1,10):
     for j in range(1,1+i):
-        print(str(j)+'*'+str(i)+'='+str(i*j),'\t',end='')
+        print(str(j)+'*'+str(i)+'='+str(i*j),end='\t')
     print('')
 
 for i in range(1,10):
    for j in range(1,i+1):
-       print('%d*%d=%2d' % (i,j,i*j),'\t',end='')
+       print('%d*%d=%2d' % (i,j,i*j),end='\t')
    print('')
 
 '''
