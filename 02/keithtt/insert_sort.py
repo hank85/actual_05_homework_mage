@@ -1,6 +1,6 @@
 #!/usr/local/bin/python3
 #
-nums=[5,13,19,21,37,56,64,75,80,88,92]
+nums=[3,4,1,6,2,9,7,0,8,5]
 
 for i in range(1,len(nums)):
 	for j in range(i,0,-1):
