@@ -17,3 +17,7 @@ while input_num != random_num:
 		exit()
 
 print('Bingo!Congratulations!')
+
+'''
+功能ok， 继续加油
+'''

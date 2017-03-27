@@ -12,3 +12,8 @@ for multiplicant in range(1, BASE+1):
         )
         print(msg, end='\t')
     print("")
+
+'''
+功能ok, 继续加油
+1. 可以尝试打印上三角
+'''
