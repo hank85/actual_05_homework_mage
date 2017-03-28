@@ -7,3 +7,7 @@ for i in range(1,10):
 		# print(j,'x',i,'=',i*j,'\t',end='')
 	print('')
 
+'''
+功能ok， 继续加油
+1. 尝试打印上三角
+'''

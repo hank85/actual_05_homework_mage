@@ -25,3 +25,7 @@ while count:
         print('小了，小了，往大了猜猜。\t你还有'+str(count)+'次机会')
 else:
     print('你太笨了！正确答案是 '+str(rand)+' 没猜到吧！')
+
+'''
+功能ok，继续加油，流程图画的不错
+'''
