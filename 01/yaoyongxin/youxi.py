@@ -21,3 +21,8 @@ while time <= 5:
     elif a == num:
         print("真聪明，猜中了！")
         break
+
+'''
+功能ok， 继续加油
+1. 简化程序，考虑continue是否有用
+'''

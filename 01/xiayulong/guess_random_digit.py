@@ -24,3 +24,7 @@ while "quit" != YG.lower() and "q" != YG.lower():
         YG = input("请再输入一个整数(0-100之间的整数), 退出(quit): ")
     else:
         YG = input("请重新输入一个整数(0-100之间的整数), 退出(quit): ")
+
+'''
+功能ok，继续加油
+'''

@@ -22,3 +22,7 @@ while count > 1:
     count -= 1
 else:
     print("太笨了，下次再来！正确答案是：" + str(rand_num))
+
+'''
+功能ok， 继续加油
+'''
