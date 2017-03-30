@@ -4,7 +4,7 @@
 ## 不要删除别人的代码！
 
 
-## 目录结果
+## 目录结构
 
 * 01：第一次作业提交的目录
     - woniu 用自己的名字新建文件间
@@ -56,14 +56,13 @@ vim ~/.ssh/id_rsa.pub
 2. 点击右上方的Accounting settings图标
 3. 选择 SSH key
 4. 点击 Add SSH key
-在出现的界面中填写SSH key的名称，填一个你自己喜欢的名称即可，然后将上面拷贝的~/.ssh/id_rsa.pub文件内容粘帖到key一栏，在点击“add key”按钮就可以了。
+在出现的界面中填写SSH key的名称，填一个你自己喜欢的名称即可
+然后将上面拷贝的~/.ssh/id_rsa.pub文件内容粘贴到key一栏，在点击“add key”按钮就可以了。
 添加过程github会提示你输入一次你的github密码
 
 添加完成后再次执行git clone就可以成功克隆github上的代码库了。
+
 ```
 
-
-
-
-账号没有加到reboot群组里的 请随时联系我
+账号没有加到reboot群组里的，请随时联系我！
 
