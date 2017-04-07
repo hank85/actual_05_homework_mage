@@ -45,6 +45,10 @@ if len(nums) > 1:
 
 sorted_nums = nums
 
+'''
+功能ok，继续加油
+'''
+
 print('排序后的结果：' + str(sorted_nums))
 print('输入你想找的数字, 输入 exit 结束程序')
 
@@ -73,3 +77,7 @@ while True:
         print('未寻找到你想要的数字')
 
 print('程序结束')
+
+'''
+功能ok， 非常棒，继续加油，坚持啊
+'''
