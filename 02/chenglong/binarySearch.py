@@ -46,3 +46,10 @@ else:
     print("%s is found in list" % num)
     print(l)
 
+'''
+功能ok，使用了函数的递归，继续加油
+但是需要优化代码，考虑
+看看29行代码和30行代码怎么一样呢
+line34行返回的是否永远都是false
+
+'''

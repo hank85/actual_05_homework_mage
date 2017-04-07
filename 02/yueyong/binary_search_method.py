@@ -30,3 +30,7 @@ while True:
     if start > end:
         print('找不到，你要找的数字不在序列中')
         break
+
+'''
+功能ok，继续加油
+'''

@@ -9,6 +9,10 @@ for i in list(range(n)):
             nums[i]=c
 print(nums)
 
+'''
+功能ok, 继续加油
+'''
+
 
 #enconding:utf-8
 
@@ -36,11 +40,7 @@ while True:
         print('no this')
         break
 
-
-
-
-
-
-
-
-
+'''
+功能ok，继续加油
+改进，找下代码中的无意义的代码并删除
+'''

@@ -8,3 +8,10 @@ for i in range(1,len(nums)):
 			nums[j-1],nums[j] = nums[j],nums[j-1]
 
 print(nums)
+
+'''
+功能ok，继续加油
+考虑是否可以优化
+提示
+nums[j] > nums[j - 1]后还有在比较[j - 1]和j[j - 2]吗？以此类推
+'''

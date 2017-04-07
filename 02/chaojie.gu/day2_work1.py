@@ -15,3 +15,8 @@ for i in range(1,len(num_list)):
             if num_list[i]<num_list[j]:
                 num_list[i],num_list[j]=num_list[j],num_list[i]
 print(num_list)
+
+'''
+有点问题呢，考虑你第2步和代码的line14行是否有冲突
+
+'''

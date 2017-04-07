@@ -25,3 +25,9 @@ while True:
                 if nums[j] > nums[j + 1]:
                     nums[j],nums[j+1] = nums[j+1],nums[j]
         print(nums)
+
+
+
+'''
+排序使用的是冒泡排序，可以查阅下相关资料查找插入排序的概念
+'''

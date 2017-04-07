@@ -15,6 +15,10 @@ def bubble_sort(nums):
                 nums[i], nums[i+1] = nums[i+1], nums[i]
     return nums
 
+'''
+加油，坚持
+'''
+
 def insertion_sort(nums):
     """
     插入排序
@@ -30,6 +34,9 @@ def insertion_sort(nums):
                 break
     return nums
 
+'''
+功能ok，继续加油，坚持
+'''
 
 def binary_search(nums, num, start, end):
     """
@@ -47,6 +54,9 @@ def binary_search(nums, num, start, end):
     else:
         return None
 
+'''
+功能ok，考虑line54~55是否需要
+'''
 nums = [1, 3, 9, 8, 7, 4, 0, 2, 6]
 
 print(bubble_sort(nums.copy()))

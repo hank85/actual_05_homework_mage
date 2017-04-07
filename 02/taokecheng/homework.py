@@ -28,11 +28,11 @@ input_list = [insert_num] + random_list
 
 for i in range(1,len(input_list)):
 	key = input_list[i]
-	index = i 
+	index = i
 	for j in range(i-1,-1,-1):
 		if input_list[j] > key:
 			input_list[j+1] = input_list[j]
-			index -= 1 
+			index -= 1
 		else:
 			break
 	input_list[index] = key
@@ -41,6 +41,9 @@ for i in range(1,len(input_list)):
 print('插入排序结果：')
 print(input_list)
 
+'''
+功能ok，非常棒，加油
+'''
 #二分查找法
 
 print('二分法从以上列表查找数据。')
@@ -59,3 +62,7 @@ while True:
 	elif input_list[mid] ==  search_num:
 		print('要查找的数字找到了，在列表的index是：',input_list.index(search_num))
 		break
+
+'''
+功能ok，继续加油
+'''

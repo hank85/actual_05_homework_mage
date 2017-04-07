@@ -9,3 +9,9 @@ for i in range(0, len(nums) - 1):
         if nums[j - 1] > nums[j]:
             nums[j - 1], nums[j] = nums[j], nums[j - 1]
 print(nums)
+
+'''
+功能ok
+可以考虑下是否可以优化
+比如nums[j - 1] <= nums[j]时还有再比较[j - 1]和[j - 2]吗?
+'''

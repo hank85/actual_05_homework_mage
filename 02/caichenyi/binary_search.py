@@ -18,3 +18,7 @@ while low <= high:
         break
 if low > high:
     print('未找到{}'.format(num_search))
+
+'''
+功能ok，继续加油
+'''

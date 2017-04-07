@@ -21,4 +21,8 @@ while True:
 		end = mid - 1
 	if start > end:
 		print('未找到')
-		break	
+		break
+
+'''
+功能ok，继续加油
+'''

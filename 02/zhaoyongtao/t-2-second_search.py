@@ -18,3 +18,7 @@ while True:
     if start > end:
         print('没找到!', find_num)
         break
+
+'''
+功能ok，非常棒，继续加油，坚持
+'''

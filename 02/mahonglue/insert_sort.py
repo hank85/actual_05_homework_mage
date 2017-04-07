@@ -39,3 +39,8 @@ for i in range(1,len(nums)):
         if nums[i] < nums[e]:
             nums[i],nums[e] = nums[e],nums[i]
 print(nums)
+
+'''
+功能ok，非常棒，继续加油
+考虑两种方法那种效率会高一些
+'''

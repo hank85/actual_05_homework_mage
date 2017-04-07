@@ -40,3 +40,7 @@ for i in range(1,len(nums2)):
         else:
             break
 print(nums2)
+
+'''
+功能ok，非常棒，继续加油
+'''

@@ -4,7 +4,7 @@
 """
 @version: 1.0
 @author: huangyisan
-@license: Apache Licence 
+@license: Apache Licence
 @file: erfenchazhao.py
 @time: 2017/3/29 22:17
 """
@@ -42,3 +42,10 @@ if find_num in list_a:
             break
 else:
     print('请输入{0}中存在的元素'.format(list_a))
+
+'''
+功能ok，代码可以在优化一下
+考虑
+line 27已经判断了元素是否存在，line28~42行还有判断吗？
+删除掉27行后，当元素不存在时什么时候结束循环
+'''

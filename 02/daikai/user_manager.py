@@ -90,3 +90,8 @@ while True:
         break
     else:
         print("操作命令错误！")
+
+
+'''
+加油，可以自己学习下for  else， while  else用法，看看能不能改进if not is_exists条件及其子语句
+'''

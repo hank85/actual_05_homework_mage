@@ -7,3 +7,7 @@ for i in range(1,len(nums)):
         else:
             break
 print(nums)
+
+'''
+功能ok，非常棒，继续加油
+'''

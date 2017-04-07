@@ -25,3 +25,7 @@ while True:
     if start_index > end_index:
         print("未找到你需要查找的数字")
         break
+
+'''
+功能ok，继续加油
+'''

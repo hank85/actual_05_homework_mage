@@ -8,3 +8,7 @@ for i in range(1,len(l)):
 		if l[j] < l[j-1]:
 			l[j],l[j-1] = l[j-1],l[j]
 print(l)
+
+'''
+功能ok，继续加油
+'''

@@ -19,3 +19,7 @@ while LOW <= HIGH:
 	else:
 		print('Yes,the key is {0}.The index is {1}.'.format(KEY,MID))
 		break
+
+'''
+功能ok，坚持，继续加油
+'''

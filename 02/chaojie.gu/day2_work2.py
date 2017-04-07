@@ -23,3 +23,7 @@ while True:
     elif num_list[mid]==num:
         print('找到了，是列表里的第',num_list.index(num)+1,'个数')
         break
+
+'''
+功能ok，继续加油
+'''
