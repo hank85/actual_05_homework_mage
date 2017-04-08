@@ -38,4 +38,6 @@ for i in range(1,len(nums)):
     for e in range(i):
         if nums[i] < nums[e]:
             nums[i],nums[e] = nums[e],nums[i]
+	else:
+	    break
 print(nums)
