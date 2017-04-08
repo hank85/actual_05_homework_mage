@@ -23,9 +23,6 @@ while True:
 	print('')
 	opt = input('请输入(update/find/add/delete/list/exit): ')
 	print('')
-	if len(opt.strip()) < 0 :
-		print('错误！输入不能为空，请重新输入.')
-		continue
 	opt = opt.strip().lower()
 	if opt == 'add':
 		add_text = input('请输入添加的用户，格式为(用户名:年龄:电话号码)： ')
