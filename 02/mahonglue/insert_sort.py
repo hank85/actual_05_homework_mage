@@ -38,6 +38,15 @@ for i in range(1,len(nums)):
     for e in range(i):
         if nums[i] < nums[e]:
             nums[i],nums[e] = nums[e],nums[i]
+<<<<<<< HEAD
 	else:
 	    break
 print(nums)
+=======
+print(nums)
+
+'''
+功能ok，非常棒，继续加油
+考虑两种方法那种效率会高一些
+'''
+>>>>>>> 399c7ecade470f83042b8ca20bb3a559edad171d

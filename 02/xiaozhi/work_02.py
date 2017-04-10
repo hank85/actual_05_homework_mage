@@ -12,6 +12,9 @@ for index in range(len(nums)):
 print(nums)
 
 
+'''
+功能ok, 继续加油
+'''
 
 #二分法查找
 nums = [7, 4, 5, 9, 8, 10, 15, 18, 11]
@@ -32,3 +35,8 @@ if num_ in nums:
             break
 else:
     print("the number not in list")
+
+'''
+功能ok，考虑下line22行是否有必要，line 23 ~ 32代码的意思在什么地方
+考虑下没有line22行，怎么判断元素不在list中
+'''

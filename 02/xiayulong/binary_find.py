@@ -20,3 +20,7 @@ while left <= right:
         break
 else:
     print(tar,"不存在")
+
+'''
+功能ok，非常棒，坚持
+'''

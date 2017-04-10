@@ -17,3 +17,7 @@ var_list=[20,397,1,2,71,22,6,9,100,200,6]
 
 insert_sort(var_list)
 print(var_list)
+
+'''
+功能ok，非常棒，加油
+'''

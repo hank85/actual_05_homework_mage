@@ -86,3 +86,8 @@ while True:
             end = mid-1
         else:
             start = mid +1
+
+'''
+功能ok，非常棒，继续加油
+注意编码格式，缩进使用4个空格，保持统一
+'''
