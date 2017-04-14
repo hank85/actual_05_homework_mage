@@ -91,9 +91,9 @@ while True:
         name = input("请输入要查询的名字：").strip()
         print(user_header)
         for user_name,user in users.items():
-            if user_name.find(name) != -1:  
+            if user_name.find(name) != -1:
                 print(user_info_temp.format(user["name"],user["age"],user["sex"]))
-      
+
             else:
                 print("user:%s not exist" % user_name)
         # name = input("pls input your name:")
@@ -117,3 +117,10 @@ while True:
         break
     else:
         print("command not found")
+
+
+
+'''
+功能ok， 继续加油
+1. 代码中的调试语句可以精简就删掉，或者用版本管理，多次修改，最后保证代码整洁度
+'''

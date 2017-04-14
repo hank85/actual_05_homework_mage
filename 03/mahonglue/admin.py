@@ -45,9 +45,16 @@ while True:
         else:
             print("您输入的用户不存在")
     elif action =="dict":
-        print("以下是所有用户信息:")         
+        print("以下是所有用户信息:")
         print("{name:<15}    {age:<15}    {tel:<15}".format(name="name",age="age",tel="tel"))
         for k,v in usr_dict.items():
             print("{name:<15}    {age:<15}    {tel:<15}".format(name=v["name"], age=v["age"], tel=v["tel"]))
     elif action =="exit":
         break
+
+
+'''
+功能ok，可以再设置一些条件，进行练习, 继续坚持，加油
+1. 比如用input接收一次提交用户输入的用户名，年龄，电话号码，练习下字符串分隔
+2. 查询用户名只要存在查找的字符串就显示
+'''

@@ -20,7 +20,7 @@ while True:
 		if not is_exists:
 			users.append({'name':name,'age':age,'tel':tel})
 			print('添加用户成功')
-			print(users)		
+			print(users)
 	elif action == 'delete':
 		name = input('请输入要删除的用户名：')
 		is_exists = False
@@ -32,7 +32,7 @@ while True:
 				break
 		if not is_exists:
 			print('用户不存在')
-		print(users)			
+		print(users)
 	elif action == 'update':
 		userupdate = input('请按格式输入信息  用户名:年龄:联系方式  ').strip()
 		name = userupdate.split(':')[0]
@@ -44,10 +44,10 @@ while True:
 				is_exists=True
 				user.update({'name':name,'age':age,'tel':tel})
 				print('更新用户成功.')
-				break		
+				break
 		if not is_exists:
-			print('用户不存在')	
-		print(users)			
+			print('用户不存在')
+		print(users)
 	elif action == 'find':
 		name = input('请输入要查找的用户名：')
 		is_exists=False
@@ -57,7 +57,7 @@ while True:
 				is_exists=True
 				print(user_info_dict.format(user['name'],user['age'],user['tel']))
 		if not is_exists:
-			print('用户不存在')		
+			print('用户不存在')
 			print(users)
 	elif action == 'list':
 		print(user_info_header)
@@ -68,3 +68,12 @@ while True:
 		break
 	else:
 		print('输入错误')
+
+
+
+'''
+功能ok，可以再设置一些条件，进行练习, 继续坚持，加油
+1. list赋值给多个变量
+2. users如果修改为dict, 考虑下使用什么属性作为key，value如何存储，如何完成用户管理
+3. 查询用户名只要存在查找的字符串就显示
+'''

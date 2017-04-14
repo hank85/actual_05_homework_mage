@@ -81,3 +81,11 @@ while True:
         break
     else:
         print("请正确输入")
+
+
+
+'''
+功能ok, 继续坚持，加油
+1. users如果修改为dict, 考虑下使用什么属性作为key，value如何存储，如何完成用户管理
+2. 考虑find代码能否简化
+'''

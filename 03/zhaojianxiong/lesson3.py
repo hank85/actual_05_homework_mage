@@ -51,3 +51,12 @@ while True:
         if is_bool:
             user.update({'age': name.strip().split(':')[1], 'tel': name.strip().split(':')[2]})
             print('update succeed')
+
+
+
+'''
+功能ok，可以再设置一条条件，进行练习, 继续坚持，加油
+1. users如果修改为dict, 考虑下使用什么属性作为key，value如何存储，如何完成用户管理
+2. 查询用户名只要存在查找的字符串就显示
+3. 可以看看for else使用方法
+'''

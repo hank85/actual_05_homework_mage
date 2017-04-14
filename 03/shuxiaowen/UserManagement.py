@@ -35,7 +35,7 @@ while True:
 		users.pop(user_input,'user {} do not exist'.format(user_input))
 		print('The deleted user is:')
 		print(user_display,'\n',user_display_format.format(pop_user['name'],pop_user['age'],pop_user['tel']))
-		
+
 
 	elif ops == 'list':
 		print(user_display)
@@ -65,7 +65,7 @@ while True:
 				print(user_display,'\n',user_display_format.format(users[key]['name'],users[key]['age'],users[key]['tel']))
 				is_exist = True
 				continue
-		if not is_exist:		
+		if not is_exist:
 			print('the name you input is not exist, try again')
 
 	elif ops == 'exit':
@@ -77,8 +77,8 @@ while True:
 
 
 
-
-
-
-
-
+'''
+功能ok，可以再设置一些条件，进行练习, 继续坚持，加油
+1. line10, 11非元组类型赋值减少使用()，当然没什么问题，但是容易导致误解
+2. 可以了解下for else如何使用
+'''
