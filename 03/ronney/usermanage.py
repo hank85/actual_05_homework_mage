@@ -13,7 +13,7 @@ user_info_temp = '|{0:^10}|{1:^5}|{2:^10}|'   #格式化字符串模板，key+�
 keys = ("name","age","sex")
 user_header = user_info_temp.format(keys[0],keys[1],keys[2])
 while True:
-    user_input= input("pls your command like add/delete/update/find/exit:")
+    user_input= input("pls your command like add/delete/update/find/exit/list:")
     user_input = user_input.strip()
     if user_input == "add":
         # name = input("pls input your name:")
