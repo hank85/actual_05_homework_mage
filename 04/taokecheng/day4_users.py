@@ -8,7 +8,7 @@ print_line = '+' + '-'*15+'+' + '-'*15+'+' + '-'*15+'+' + '-'*15+'+'
 user_info_header = print_format.format('Name','Password','Age','Phone')
 base_info = ('name', 'passwd','age', 'phone')
 user_data = ('user.dat')
-load_user_dat = open(user_data,)
+load_user_dat = open(user_data)
 for user in load_user_dat:
 	tmp = dict(zip(base_info,user.strip().split(':')))
 	# print(tmp)
@@ -137,7 +137,6 @@ while True:
 							print(print_line)
 							print('当前用户总数是 ', len(user_dic), ' 条。')
 						elif input_txt == 'age':
-							##冒泡排序。。。。
 							user_list = list(user_dic.values())
 							for i in range(len(user_list) - 1):
 								for j in range(len(user_list) - 1 - i):
@@ -158,8 +157,6 @@ while True:
 							print(print_line)
 							print('当前用户总数是 ', len(user_list), ' 条。')
 						elif input_txt == 'phone':
-							user_list = list(user_dic.values())
-							##冒泡排序。。。。
 							user_list = list(user_dic.values())
 							for i in range(len(user_list) - 1):
 								for j in range(len(user_list) - 1 - i):
@@ -185,12 +182,6 @@ while True:
 							print('输入错误，请重新输入。')
 
 				elif opt == 'back':
-					with open(user_data, 'wt') as f:
-						for user in user_dic.values():
-							f.write('{}:{}:{}:{}\n'.format(user.get('name', None),
-							                                user.get('passwd', None),
-							                                user.get('age', None),
-							                                user.get('phone', None)))
 					break
 
 				else:
@@ -208,6 +199,14 @@ while True:
 		else:
 			print('注册失败！',name,' 已存在，请重新输入!')
 	elif choice == '3':
+		user_data = ('user.dat')
+		load_user_dat = open(user_data,'wt')
+		for user in user_dic.values():
+			load_user_dat.write('{}:{}:{}:{}\n'.format(user.get('name', None),
+				                               user.get('passwd', None),
+				                               user.get('age', None),
+				                               user.get('phone', None)))
+		load_user_dat.close()
 		print('系统已退出！')
 		break
 	else:
