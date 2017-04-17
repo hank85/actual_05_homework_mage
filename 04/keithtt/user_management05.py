@@ -97,7 +97,11 @@ else:
 			for user in users.values():
 				print(user_info_dict.format(name=user['name'],age=user['age'],tel=user['tel'],passwd='*'*len(user['passwd'])))
 		elif action == 'exit':
-			print('退出程序')
+			fhandler = open(path,'wt')
+			for user in users.values():
+				fhandler.write('{}:{}:{}:{}\n'.format(user['name'],user['age'],user['tel'],user['passwd']))
+			fhandler.close()	
+			print('数据已保存，退出程序')
 			break
 		else:
 			print('输入错误')
