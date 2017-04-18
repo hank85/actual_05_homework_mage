@@ -29,7 +29,7 @@ import getpass
 path='users.txt'
 
 users = {}
-user_info_dict = '|{name:^20}|{age:^10}|{tel:^20}|{passwd:^10}'
+user_info_dict = '|{name:^20}|{age:^15}|{tel:^20}|{passwd:^15}|'
 user_info_header = user_info_dict.format(name='name',age='age',tel='tel',passwd='passwd')
 
 fhandler = open(path,'rt')
