@@ -40,14 +40,16 @@ while True:
 			print (titl.format(i['name'],i['age'],i['tel']))
 	elif action == 'find':
 		user = input('请输入要查找的用户名：')
-		user = user.strip()
-		for i in list(users):
- 			if user in str(i):
- 				a = users[i]
- 				print (titl.format(a['name'],a['age'],a['tel']))
- 				flag = True
-		if flag == False :
-			print ('用户'+user+'不存在')
+		if users.find(user) != -1 :
+			print (users[user])
+		#user = user.strip()
+		#for i in list(users):
+ 		#	if user in str(i):
+ 		#		a = users[i]
+ 		#		print (titl.format(a['name'],a['age'],a['tel']))
+ 		#		flag = True
+		#if flag == False :
+		#	print ('用户'+user+'不存在')
 	elif action == 'exit':
 		print('系统已退出。。。。。。。。。。')
 		break
