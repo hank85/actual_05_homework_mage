@@ -17,8 +17,8 @@ user_file_name = '/user_db'
 login_user_file_name = '/passwd'
 while count:
     # 用户登录验证
-    enter_username = input('请输入登录用户名: ')
-    enter_password = input('请输入密码: ')
+    enter_username = input('请输入登录用户名 admin : ')
+    enter_password = input('请输入密码 0000 : ')
     login_user_file = open(file_path+login_user_file_name, 'r')
     for login_user_line in login_user_file:
         login_user, login_passwd = login_user_line.strip().split(':')
