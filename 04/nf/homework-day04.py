@@ -23,8 +23,8 @@ while True:
 		name = input('请输入需要删除的用户名:')
 		for user in users:
 			if name in user.values():
-				user.clear()
-				print('删除用户信息成功!','\n',users)
+				users.remove(user)
+				print('删除用户信息成功!')
 				break
 		else:
 			print('错误!用户不存在!')
