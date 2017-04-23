@@ -39,7 +39,7 @@ def user_load():
     fhandler = open(path,'rt')
     for line in fhandler:
         name,age,tel,passwd = line.strip().split(':')
-        users[name] = {'name':name,'age':age,'tel':tel,'passwd':passwd}
+        users[name] = {'name':name,'age':int(age),'tel':int(tel),'passwd':passwd}
     fhandler.close()
 
 #登录验证，最多三次，用户输入用户名和密码
@@ -67,7 +67,7 @@ def user_add():
     if name in users:
         print('添加失败，用户已存在')
     else:
-        users[name] = {'name':name,'age':age,'tel':tel,'passwd':passwd}    
+        users[name] = {'name':name,'age':int(age),'tel':int(tel),'passwd':passwd}    
         print('添加成功')
 
 #删除用户
@@ -84,7 +84,7 @@ def user_update():
     userupdate = input('请按格式输入信息(用户名:年龄:联系方式:密码): ')
     name,age,tel,passwd = userupdate.split(':')
     if name in users:
-        users[name] = {'name':name,'age':age,'tel':tel,'passwd':passwd}
+        users[name] = {'name':name,'age':int(age),'tel':(tel),'passwd':passwd}
         print('更新用户成功')
     else:
         print('更新失败，用户不存在')
