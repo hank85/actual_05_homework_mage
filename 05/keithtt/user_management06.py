@@ -42,7 +42,7 @@ def user_load():
         users[name] = {'name':name,'age':age,'tel':tel,'passwd':passwd}
     fhandler.close()
 
-#登录验证，最多三次，用户输入用户名和电话
+#登录验证，最多三次，用户输入用户名和密码
 def user_auth():
     is_valid = False
     for i in range(3):
