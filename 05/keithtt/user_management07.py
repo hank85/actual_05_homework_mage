@@ -42,6 +42,16 @@
 列表展示排序:sorted()/list.sort()
 '''
 
+'''
+"keith1:18:110:abc"
+"keith2:19:111:abc"
+"keith3:20:112:abc"
+"keith4:21:113:abc"
+"jerry:36:120:abcabc"
+"charlse:3:139:abc"
+"tom:38:138:abc"
+'''
+
 #encoding: utf-8
 import getpass
 import json
@@ -128,8 +138,8 @@ def user_list():
 def user_save():
     fhandler = open(path,'wt')
     for user in users.values():
-        user_json = json.dumps('{}:{}:{}:{}\n'.format(user['name'],user['age'],user['tel'],user['passwd']))
-        fhandler.write(user_json)
+        user_json = json.dumps('{}:{}:{}:{}'.format(user['name'],user['age'],user['tel'],user['passwd']))
+        fhandler.write(user_json+'\n')
     fhandler.close()    
     print('数据已保存，退出程序')
 
