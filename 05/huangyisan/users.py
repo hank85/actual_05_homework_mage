@@ -11,11 +11,9 @@
 import os
 import json
 count = 3
-all_login_user = {}
 file_path = os.getcwd()
 user_file_name = '/user_db'
 login_passwd = '/passwd'
-users = {}
 user_info_tpl = '|{0:^20}|{1:^5}|{2:^20}|'
 login_user_info_tpl = '|{0:^20}|{1:^20}|'
 user_info_header = user_info_tpl.format('name', 'age', 'telephone')
@@ -40,7 +38,6 @@ def Func_Authen(auth_file_path=file_path, auth_file_name=login_passwd, mode=0):
             Func_User_Info_Write_Read(auth_file_name=login_passwd, mode='ar')
             if all_login_user.get(enter_username) == enter_password:
                 print('登录成功!')
-                global current_login_user
                 current_login_user = enter_username
                 return True
             else:
@@ -65,6 +62,7 @@ def Func_Authen(auth_file_path=file_path, auth_file_name=login_passwd, mode=0):
 def Func_User_Info_Write_Read(auth_file_path=file_path, auth_file_name=user_file_name, mode='nr'):
     global users
     global all_login_user
+    # 这两个变量在其他函数中会用到，所以需要global定义变成全局作用域
     if mode == 'nr':
         file_user_db = open(auth_file_path + auth_file_name, 'r')
         users = json.load(file_user_db)
