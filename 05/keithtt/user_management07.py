@@ -129,7 +129,7 @@ def user_save():
     fhandler = open(path,'wt')
     for user in users.values():
         user_json = json.dumps('{}:{}:{}:{}\n'.format(user['name'],user['age'],user['tel'],user['passwd']))
-        fhandler.write(user_json+'\n')
+        fhandler.write(user_json)
     fhandler.close()    
     print('数据已保存，退出程序')
 
