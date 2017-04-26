@@ -3,7 +3,7 @@
 如果输入add，则让用户继续输入用户名、年龄、联系方式等数据，将用户数据(用户名, 年龄，联系方式)，放入list中存储，在放入list之前检查用户名不重复，如果重复，则提示用户已存在。
 如果输入delete，则让用户输入"用户名"字符串，根据用户名查找list中数据，若存在数据则将该数据移除，若用户数据不存在，则提示不存在。
 如果输入update，则让用户分别输入用户名、年龄、联系方式等数据，根据用户名查找list中数据，若存在数据则将改数据更新为新的(用户名, 年龄，联系方式)，若用户数据不存在，则提示不存在。
-如果用户输入find，则让用户输入"用户名"，根据用户名查找list中数据用户名等于字符串的用户信息，并打印。
+如果用户输入find，则让用户输入"用户名"，根据用户名查找list中数据用户名包含字符串的用户信息，并打印。
 如果用户输入list，则打印所有用户信息。
 打印用户第一个行数据，第一行数据为用户信息描述，从第二行开始为用户数据。
 如果用户输入exit，则打印退出程序，并退出。
@@ -44,11 +44,13 @@
 
 #encoding: utf-8
 import getpass
+import json
 
 #从文件读取用户信息
 def user_load():
     fhandler = open(path,'rt')
     for line in fhandler:
+        line = json.loads(line)
         name,age,tel,passwd = line.strip().split(':')
         users[name] = {'name':name,'age':int(age),'tel':int(tel),'passwd':passwd}
     fhandler.close()
@@ -126,7 +128,8 @@ def user_list():
 def user_save():
     fhandler = open(path,'wt')
     for user in users.values():
-        fhandler.write('{}:{}:{}:{}\n'.format(user['name'],user['age'],user['tel'],user['passwd']))
+        user_json = json.dumps('{}:{}:{}:{}\n'.format(user['name'],user['age'],user['tel'],user['passwd']))
+        fhandler.write(user_json+'\n')
     fhandler.close()    
     print('数据已保存，退出程序')
 

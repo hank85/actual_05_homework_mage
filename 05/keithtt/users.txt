@@ -1,6 +1,7 @@
-keith1:18:110:abc
-keith2:19:111:abc
-keith3:20:112:abc
-keith4:21:113:abc
-jerry:36:120:abcabc
-charlse:3:139:abc
+"keith1:18:110:abc\n"
+"keith2:19:111:abc\n"
+"keith3:20:112:abc\n"
+"keith4:21:113:abc\n"
+"jerry:36:120:abcabc\n"
+"charlse:3:139:abc\n"
+"tom:38:138:abc\n"
