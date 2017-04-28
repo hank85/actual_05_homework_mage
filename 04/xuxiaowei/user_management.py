@@ -63,7 +63,7 @@ else:
 
 
         elif ACTION == 'find':
-            name = input('请输入需要删除的用户名:')
+            name = input('请输入需要查找的用户名:')
             name = name.strip()
             if name in user_list:
                 print(header)
