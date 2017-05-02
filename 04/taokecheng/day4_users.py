@@ -121,46 +121,14 @@ while True:
 				elif opt == 'list':
 					while True:
 						input_txt = input('请输入要排序字段(name/age/phone/back)>> ')
-						if input_txt == 'name':
-							sort_name_list = list(user_dic)
-							sort_name_list.sort()
-							print('用户信息列表如下:')
-							print(print_line)
-							print(user_info_header)
-							for name in sort_name_list:
-								print(print_line)
-								print(print_format.format(user_dic[name].get('name', None),
-								                          '*' * len(user_dic[name]['passwd']),
-								                          user_dic[name].get('age', None),
-								                          user_dic[name].get('phone', None)
-									                          ))
-							print(print_line)
-							print('当前用户总数是 ', len(user_dic), ' 条。')
-						elif input_txt == 'age':
-							user_list = list(user_dic.values())
+						user_list = list(user_dic.values())
+						if input_txt in [ 'age','name','phone']:
 							for i in range(len(user_list) - 1):
 								for j in range(len(user_list) - 1 - i):
-									if int(user_list[j]['age']) > int(user_list[j + 1]['age']):
-										temp = user_list[j]
-										user_list[j] = user_list[j + 1]
-										user_list[j + 1] = temp
-							print('用户信息列表如下:')
-							print(print_line)
-							print(user_info_header)
-							for user in user_list:
-								print(print_line)
-								print(print_format.format(user.get('name', None),
-								                          '*' * len(user['passwd']),
-								                          user.get('age', None),
-								                          user.get('phone', None)
-									                          ))
-							print(print_line)
-							print('当前用户总数是 ', len(user_list), ' 条。')
-						elif input_txt == 'phone':
-							user_list = list(user_dic.values())
-							for i in range(len(user_list) - 1):
-								for j in range(len(user_list) - 1 - i):
-									if int(user_list[j]['phone']) > int(user_list[j + 1]['phone']):
+									if input_txt == 'age':
+										user_list[j][input_txt] = int(user_list[j][input_txt])
+										user_list[j + 1][input_txt] = int(user_list[j + 1][input_txt])
+									if user_list[j][input_txt] > user_list[j + 1][input_txt]:
 										temp = user_list[j]
 										user_list[j] = user_list[j + 1]
 										user_list[j + 1] = temp
