@@ -39,18 +39,19 @@ def addUser(requst):
 	mtime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 	# publish_date = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime())
 	print('更新用户或者添加用户',action)
+	print('#############',username,age,tel,password,action)
 	if action == 'add_user':
 		msg,status = check_user_add(username, age, tel, password, users)
 		action_msg = '添加用户成功!'
 	elif action == 'update_user':
 		msg,status,user_index = check_update_user(username, age, tel, password, users)
-		users[user_index] = {'username':username,'age':age,'password':password,'tel':tel,'mtime':mtime}
-		action_msg = '更新用户成功!'
 
 	if status :
 		if action == 'add_user':
 			save_user(username,age,tel,password,mtime,users)
 		elif action == 'update_user':
+			users[user_index] = {'username':username,'age':age,'password':password,'tel':tel,'mtime':mtime}
+			action_msg = '更新用户成功!'
 			save_user(None, None, None, None, None, users)
 		return HttpResponse('{} <br><br><a href="index.html">返回用户主页</a>'.format(action_msg))
 	else:
