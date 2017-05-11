@@ -4,7 +4,7 @@ import json, time
 
 # Create your models here.
 
-MESSAGE_FILE = 'files/messages.json'
+MESSAGE_FILE = 'conf/messages.json'
 
 def get_messages():
     with open(MESSAGE_FILE, 'rt') as fhandle:

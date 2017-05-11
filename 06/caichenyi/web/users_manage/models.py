@@ -4,7 +4,7 @@ import json
 
 # Create your models here.
 
-USERS_FILE = 'files/users.txt'
+USERS_FILE = 'conf/users.txt'
 
 def get_users():
     with open(USERS_FILE, 'rt') as f:
