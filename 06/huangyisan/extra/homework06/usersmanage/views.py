@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
 from . import models
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
@@ -27,3 +27,8 @@ def create(request):
 
 def delete(request):
     return render(request, 'usersmanage/delete.html')
+
+def save(request):
+	print(request.GET,'get')
+	print(request.POST,'post')
+	return HttpResponse('ok')
