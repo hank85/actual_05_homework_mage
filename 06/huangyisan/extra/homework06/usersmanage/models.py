@@ -15,9 +15,9 @@ def save_message(name,age,telephone):
     fhandler.close()
     return True
 
-def del_message(name,age,telephone):
+def del_message(name):
     messages=get_messages()
-    messages.pop(name,"") 
+    messages.pop(name,"")
     fhandler = open(MESSAGE_FILE, 'wt')
     fhandler.write(json.dumps(messages))
     fhandler.close()

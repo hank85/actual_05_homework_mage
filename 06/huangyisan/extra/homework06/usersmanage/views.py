@@ -7,13 +7,8 @@ def index(request):
 @csrf_exempt
 def usersinfo(request):
     info = models.get_messages()
-    print(info)
-    #user_context = {'messages':models.get_messages()}
-    #print(models.get_messages())
-    #return render(request,'usersmanage/usersinfo.html',{'messages':info})
     return render(request,'usersmanage/usersinfo.html',{'messages':info})
 
-    #return render(request, 'usersmanage/usersinfo.html')
 def home(request):
     return render(request, 'usersmanage/home.html')
 
@@ -31,18 +26,20 @@ def save_create(request):
     user_name = request.GET.get('name')
     user_age = request.GET.get('age','')
     user_telephone = request.GET.get('telephone','')
-    print(user_name,user_age,user_telephone)
-    models.save_message(user_name,user_age,user_telephone) 
-    return HttpResponseRedirect('/usersmanage/usersinfo.html')
+    models.save_message(user_name,user_age,user_telephone)
+    return HttpResponseRedirect('/usersmanage/usersinfo/')
 
 def save_delete(request):
     user_name = request.GET.get('name')
-    print(user_name,user_age,user_telephone)
-    models.del_message(user_name,user_age,user_telephone) 
-    return HttpResponseRedirect('/usersmanage/usersinfo.html')
+    models.del_message(user_name)
+    return HttpResponseRedirect('/usersmanage/usersinfo/')
 
 def search_info(request):
-    search_dict={}
-    print(request.GET,'get')
+    search_list=[]
+    #print(request.GET,'get')
     user_name = request.GET.get('name')
-    return HttpResponse('ok') 
+    for dict_name in models.get_messages():
+        if dict_name.find(user_name) != -1:
+            user_info = {'name':dict_name,'age':models.get_messages().get(dict_name,'').get('Age',''),'telephone':models.get_messages().get(dict_name,'').get('Tel','')}
+            search_list.append(user_info)
+    return render(request,'usersmanage/searchinfo.html',{'messages':search_list})
