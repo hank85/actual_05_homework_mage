@@ -21,3 +21,9 @@ def usersinfo(request):
     #return render(request, 'usersmanage/usersinfo.html')
 def home(request):
     return render(request, 'usersmanage/home.html')
+
+def create(request):
+    return render(request, 'usersmanage/create.html')
+
+def delete(request):
+    return render(request, 'usersmanage/delete.html')
