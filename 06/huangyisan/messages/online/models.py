@@ -16,9 +16,9 @@ def get_messages():
     fhandler.close()
     return json.loads(cxt)
 
-def save_message(username,title,content):
+def save_messages(nowtime,username,title,content):
     messages = get_messages()
-    messages.append({"username":username,"title":title,"content":content,"publish_date":""})
+    messages.append({"time":nowtime,"username":username,"title":title,"content":content,"publish_date":""})
     fhandler = open(MESSAGE_FILE,'wt')
     fhandler.write(json.dumps(messages))
     fhandler.close()
