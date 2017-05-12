@@ -24,6 +24,7 @@ def delete(request):
     return render(request, 'usersmanage/delete.html')
 
 def search(request):
+    print('search_info')
     return render(request, 'usersmanage/search.html')
 
 def save_create(request):
@@ -39,3 +40,9 @@ def save_delete(request):
     print(user_name,user_age,user_telephone)
     models.del_message(user_name,user_age,user_telephone) 
     return HttpResponseRedirect('/usersmanage/usersinfo.html')
+
+def search_info(request):
+    search_dict={}
+    print(request.GET,'get')
+    user_name = request.GET.get('name')
+    return HttpResponse('ok') 
