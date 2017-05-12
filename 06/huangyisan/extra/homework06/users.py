@@ -30,7 +30,6 @@ def Func_Authen(auth_file_path=file_path, auth_file_name=login_passwd, mode=0):
     mode=2 当前用户认证
     '''
     count = 3
-    global current_login_user
     if mode == 0:
         while count:
             # 用户登录验证

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>用户资料详情</title>
+    </head>
+    <body>
+        <h2>用户资料详情</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>用户</th>
+                    <th>年龄</th>
+                    <th>手机</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if messages %}
+                    {% for  message,value  in messages.items %}
+                    <tr>
+                        <td>{{ message }}</td>
+                        <td>{{ value.Age}}</td>
+                        <td>{{ value.Tel}}</td>
+                        <td>
+							<input type="submit" value="删除">
+						</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="4"> 无数据 </td>
+                    </tr>
+                {% endif %}
+            </tbody>
+    </body>
+</html>
