@@ -23,4 +23,3 @@ def save_message(username,title,content):
     fhandler.write(json.dumps(messages))
     fhandler.close()
     return True
-

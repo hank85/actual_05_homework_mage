@@ -6,5 +6,6 @@ urlpatterns = [
     url(r'^usersinfo', views.usersinfo, name='usersinfo'),
     url(r'^create', views.create, name='create'),
     url(r'^delete', views.delete, name='delete'),
-    url(r'^save/', views.save, name='save'),
+    url(r'^save_create/', views.save_create, name='save_create'),
+    url(r'^save_delete/', views.save_delete, name='save_delete'),
 ]

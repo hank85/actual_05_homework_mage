@@ -16,6 +16,6 @@ def save(request):
     title = request.GET.get('title','')
     content = request.GET.get('content','')
     print(username,title,content)
-    models.save_message(username,title,content)
+    models.save_messages(username,title,content)
     return HttpResponseRedirect('/online/')
 

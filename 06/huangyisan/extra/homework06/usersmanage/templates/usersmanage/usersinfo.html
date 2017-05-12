@@ -12,7 +12,6 @@
                     <th>用户</th>
                     <th>年龄</th>
                     <th>手机</th>
-                    <th>操作</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,11 +19,8 @@
                     {% for  message,value  in messages.items %}
                     <tr>
                         <td>{{ message }}</td>
-                        <td>{{ value.Age}}</td>
-                        <td>{{ value.Tel}}</td>
-                        <td>
-							<input type="submit" value="删除">
-						</td>
+                        <td>{{ value.Age }}</td>
+                        <td>{{ value.Tel }}</td>
                     </tr>
                     {% endfor %}
                 {% else %}
@@ -37,6 +33,7 @@
 		<br></br>
 		<br></br>
 		<br></br>
+        <h3>用户信息操作</h3>
         <a href='create.html'>添加用户</a>  
         <a href='delete.html'>删除用户</a>  
 		<!--<h2>添加用户</h2>
