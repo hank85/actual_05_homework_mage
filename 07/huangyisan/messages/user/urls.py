@@ -10,6 +10,7 @@
 from django.conf.urls import url
 from . import views
 urlpatterns = [
+    url(r'^$', views.require_login, name='require_login'),
     url(r'^require_login/', views.require_login, name='require_login'),
     url(r'^login/', views.login, name='login'),
     url(r'^list_user/', views.list_user, name='list_user'),

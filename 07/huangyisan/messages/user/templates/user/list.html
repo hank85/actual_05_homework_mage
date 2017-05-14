@@ -17,15 +17,19 @@
             <tbody>
                 {% if messages %}
                     {% for message,value in messages.items %}
-                    <tr>
-                        <td>{{ message}}</td>
-                        <td>{{ value.age}}</td>
-                        <td>{{ value.tel}}</td>
-                        <td>
-                            <a href="/user/edit_user/?name={{ message }}">编辑</a>
-                            <a href="/user/delete_user/?name={{ message }}">删除</a>
-                        </td>
-                    </tr>
+                        {% if message == 'error' %}
+                            <label></label>
+                        {% else %}
+                            <tr>
+                                <td>{{ message }}</td>
+                                <td>{{ value.age }}</td>
+                                <td>{{ value.tel }}</td>
+                                <td>
+                                    <a href="/user/edit_user/?name={{ message }}">编辑</a>
+                                    <a href="/user/delete_user/?name={{ message }}">删除</a>
+                                </td>
+                            </tr>
+                        {% endif %}
                     {% endfor %}
                 {% else %}
                     <tr>
@@ -38,8 +42,10 @@
                 <br></br>
                 ---------------------------------------------
                 <h2>添加用户信息</h2>
-                <form action="/user/add_user/" method="POST">
+                {{ messages.error }}
+                <form action="/user/list_user/" method="POST">
                     {% csrf_token %}
+                    <input type="hidden" name="action" value="add"/>
                     <label>Name:</label> <input type="text" name="name" placeholder="请输入姓名"/> <br> </br>
                     <label>Age:</label> <input type="text" name="age"  placeholder="请输入年龄"/> <br> </br>
                     <label>Tel:</label> <input type="text" name="tel"  placeholder="请输入手机号码"/> <br> </br>

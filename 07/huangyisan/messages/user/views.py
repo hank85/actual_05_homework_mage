@@ -19,8 +19,14 @@ def login(request):
         return render(request,'user/login.html',context)
 
 def list_user(request):
-    context = {'messages':models.get_messages()}
-    return render(request, 'user/list.html',context)
+    action = request.POST.get('action','None')
+    if action == 'add':
+        return add_user(request)
+    else:
+        context = {'messages':models.get_messages()}
+        print(context,type(context))
+        print(models.get_messages(),type(models.get_messages()))
+        return render(request, 'user/list.html',context)
 
 def delete_user(request):
     name = request.GET.get('name','')
@@ -53,5 +59,13 @@ def add_user(request):
     tel = request.POST.get('tel','')
     password = request.POST.get('password','')
     print(name,age,tel,password)
-    models.modify_user(name=name,age=age,tel=tel,password=password,users=models.get_messages())
+    if name in models.get_messages():
+        print('exist')
+        info_dict=models.get_messages()
+        info_dict['error'] = '此用户已经存在'
+        context={'messages':info_dict}
+        return render(request,'user/list.html',context)
+    else:
+        print('not exist')
+        models.modify_user(name=name,age=age,tel=tel,password=password,users=models.get_messages())
     return HttpResponseRedirect('/user/list_user/')
