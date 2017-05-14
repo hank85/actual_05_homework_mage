@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>users_manage</title>
+    </head>
+    <body>
+        <h2>用户列表</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>age</th>
+                    <th>tel</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if messages %}
+                    {% for message,value in messages.items %}
+                    <tr>
+                        <td>{{ message}}</td>
+                        <td>{{ value.age}}</td>
+                        <td>{{ value.tel}}</td>
+                        <td>
+                            <a href="/user/edit_user/?name={{ message }}">编辑</a>
+                            <a href="/user/delete_user/?name={{ message }}">删除</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="3"> 无数据 </td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+                <br></br>
+                <br></br>
+                ---------------------------------------------
+                <h2>添加用户信息</h2>
+                <form action="/user/add_user/" method="POST">
+                    {% csrf_token %}
+                    <label>Name:</label> <input type="text" name="name" placeholder="请输入姓名"/> <br> </br>
+                    <label>Age:</label> <input type="text" name="age"  placeholder="请输入年龄"/> <br> </br>
+                    <label>Tel:</label> <input type="text" name="tel"  placeholder="请输入手机号码"/> <br> </br>
+                    <label>password:</label> <input type="password" name="password" placeholder="请输入密码"/> <br> </br>
+                    <input type="submit" value='调♂教'/>
+                </form>
+    </body>
+</html>
