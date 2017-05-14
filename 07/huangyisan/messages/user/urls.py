@@ -18,4 +18,6 @@ urlpatterns = [
     url(r'^edit_user/', views.edit_user, name='edit_user'),
     url(r'^modify_user/', views.modify_user, name='modify_user'),
     url(r'^add_user/', views.add_user, name='add_user'),
+    url(r'^unauth_error/', views.unauth_error, name='unauth_error'),
+    url(r'^exit_user/', views.exit_user, name='exit_user'),
 ]

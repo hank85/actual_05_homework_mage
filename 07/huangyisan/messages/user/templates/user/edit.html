@@ -24,6 +24,7 @@
             </tbody>
         </table>
         <h3>修改信息：</h3>
+        {{ messages.data_error }}
         <form action="/user/modify_user/" method="POST">
             {% csrf_token %}
             <label>Name: {{ user_info.name }}</label>
@@ -32,6 +33,9 @@
             <label>Age:</label> <input type="text" name="age" value="{{ user_info.Age }}" placeholder="请输入年龄"/> <br> </br>
             <label>Tel:</label> <input type="text" name="tel" value="{{ user_info.Tel }}" placeholder="请输入手机号码"/> <br> </br>
             <input type="submit" value='调♂教'/>
+            <a href="/user/list_user/">
+                <input type="button" value="放♂置" onclick="window.location.href('/user/list_user/')">
+            </a>
         </form>
     </body>
 </html>
