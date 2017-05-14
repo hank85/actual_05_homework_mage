@@ -18,7 +18,9 @@
                 {% if messages %}
                     {% for message,value in messages.items %}
                         <!--在add等环境如果出现异常，会传递过来一个error的key和对应的值，需要进行过滤-->
-                        {% if message == 'error' %}
+                        {% if message == 'data_error' %}
+                            <label></label>
+                            {% elif message == 'func_error' %}
                             <label></label>
                         {% else %}
                             <tr>
@@ -27,7 +29,7 @@
                                 <td>{{ value.tel }}</td>
                                 <td>
                                     <a href="/user/edit_user/?name={{ message }}">编辑</a>
-                                    <a href="/user/delete_user/?name={{ message }}">删除</a>
+                                    <a href="/user/delete_user/?name={{ message }}">删除</a> {{ messages.func_error }}
                                 </td>
                             </tr>
                         {% endif %}
@@ -43,7 +45,7 @@
                 <br></br>
                 ---------------------------------------------
                 <h2>添加用户信息</h2>
-                {{ messages.error }}
+                {{ messages.data_error }}
                 <form action="/user/list_user/" method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="action" value="add"/>

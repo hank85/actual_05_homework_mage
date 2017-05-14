@@ -31,12 +31,21 @@ def list_user(request):
         return render(request, 'user/list.html',context)
 
 def delete_user(request):
+    if len(models.get_messages()) == 1:
+        return handle_error(request,'无法删除最后一个用户','func_error')
+    else:
+        name = request.GET.get('name','')
+        models.delete_user(name)
+        print(request.GET)
+        print(name)
+        return HttpResponseRedirect('/user/list_user/')
+    '''
     name = request.GET.get('name','')
     models.delete_user(name)
     print(request.GET)
     print(name)
     return HttpResponseRedirect('/user/list_user/')
-
+    '''
 def edit_user(request):
     name = request.GET.get('name','')
     age = models.get_messages().get(name).get('age')
@@ -57,32 +66,35 @@ def modify_user(request):
 
 def add_user(request):
     name = request.POST.get('name','')
-    age = request.POST.get('age','')
+    age = request.POST.get('age','-1')
     age = int(age)
     tel = request.POST.get('tel','')
     password = request.POST.get('password','')
     if name in models.get_messages():
-        print('exist')
+        return handle_error(request,'此用户已经存在，添加信息失败','data_error')
+        '''
         info_dict=models.get_messages()
         #当添加一个已经存在的用户的时候，添加一个error的key和对应的'此用户已经存在'的值给原字典，一起传递给list.html进行渲染。
         #因为单纯的渲染error不够，所以和数据需要一起传递。
-        info_dict['error'] = '此用户已经存在'
+        info_dict['data_error'] = '此用户已经存在，添加信息失败'
         context={'messages':info_dict}
         #因为add行为在list.html。所以这里直接request了list.html。如果独立出一个界面再重定向回list.html会有问题。当出现error的时候，会因为重定向导致渲染丢失。
         #总之这里我是强行要把add和list写同个界面了。。应该有更好的处理方法,来解决重定向后渲染丢失问题。
         return render(request,'user/list.html',context)
+        '''
     if age < 0 or age > 150:
-        return handle_error(request,'这年龄很诡异，添加信息失败')
+        return handle_error(request,'这年龄很诡异，添加信息失败','data_error')
     if len(tel) != 11:
-        return handle_error(request,'这手机号码很诡异，添加信息失败')
+        return handle_error(request,'这手机号码很诡异，添加信息失败','data_error')
     if len(password) < 6:
-        return handle_error(request,'密码设置过于简单，请重新设置')
+        return handle_error(request,'密码设置过于简单，请重新设置','data_error')
     else:
         models.modify_user(name=name,age=age,tel=tel,password=password,users=models.get_messages())
     return HttpResponseRedirect('/user/list_user/')
 
-def handle_error(request,error_message):
+def handle_error(request,error_message,kind_error):
     info_dict=models.get_messages()
-    info_dict['error'] = error_message
+    info_dict[kind_error] = error_message
     context={'messages':info_dict}
+    print(context)
     return render(request,'user/list.html',context)
