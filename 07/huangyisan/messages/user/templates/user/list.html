@@ -17,6 +17,7 @@
             <tbody>
                 {% if messages %}
                     {% for message,value in messages.items %}
+                        <!--在add等环境如果出现异常，会传递过来一个error的key和对应的值，需要进行过滤-->
                         {% if message == 'error' %}
                             <label></label>
                         {% else %}
@@ -47,9 +48,9 @@
                     {% csrf_token %}
                     <input type="hidden" name="action" value="add"/>
                     <label>Name:</label> <input type="text" name="name" placeholder="请输入姓名"/> <br> </br>
-                    <label>Age:</label> <input type="text" name="age"  placeholder="请输入年龄"/> <br> </br>
+                    <label>Age:</label> <input type="text" name="age"  placeholder="请输入年龄(0-150)"/> <br> </br>
                     <label>Tel:</label> <input type="text" name="tel"  placeholder="请输入手机号码"/> <br> </br>
-                    <label>password:</label> <input type="password" name="password" placeholder="请输入密码"/> <br> </br>
+                    <label>password:</label> <input type="password" name="password" placeholder="请输入密码,大于6位"/> <br> </br>
                     <input type="submit" value='调♂教'/>
                 </form>
     </body>
