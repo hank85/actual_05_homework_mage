@@ -37,7 +37,7 @@ def list_user(request):
 
 def delete_user(request):
     if len(models.get_messages()) == 1:
-        return handle_error(request,'无法删除最后一个用户','func_error')
+        return handle_error(request,'无法删除最后一个用户','func_error','user/list.html')
     else:
         name = request.GET.get('name','')
         models.delete_user(name)
