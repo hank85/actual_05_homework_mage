@@ -9,12 +9,14 @@ def require_login(request):
 def login(request):
     username = request.POST.get('username', '')
     password = request.POST.get('password', '')
+    print(username,password)
     rt = models.validate_login(username, password)
     if rt:
         global login_user
         login_user = username
         return HttpResponseRedirect('/user/list_user/')
     else:
+        print(rt)
         context = {'error':'用户名或密码错误','username':username,'password':password}
         return render(request,'user/login.html',context)
 
@@ -29,6 +31,7 @@ def list_user(request):
             return add_user(request)
         else:
             context = {'messages':models.get_messages()}
+            print(context,type(context))
             print(models.get_messages(),type(models.get_messages()))
             return render(request, 'user/list.html',context)
 
