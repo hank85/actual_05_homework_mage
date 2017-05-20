@@ -87,7 +87,7 @@ def add_user(request):
     tel = request.POST.get('tel','')
     password = request.POST.get('password','')
     if name in models.get_messages():
-        return handle_error(request,'此用户已经存在，添加信息失败','data_error')
+        return handle_error(request,'此用户已经存在，添加信息失败','data_error','user/list.html')
         '''
         info_dict=models.get_messages()
         #当添加一个已经存在的用户的时候，添加一个error的key和对应的'此用户已经存在'的值给原字典，一起传递给list.html进行渲染。
