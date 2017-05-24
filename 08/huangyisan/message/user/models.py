@@ -39,6 +39,8 @@ SQL_USER_SINGLE = 'select username,age,tel,password from user where username=%s'
 SQL_USER_DELETE = 'delete from user where username=%s'
 SQL_USER_ADD = 'insert into user (username,age,tel,password) values(%s,%s,%s,%s)'
 SQL_USER_UPDATE = 'update user set age=%s,tel=%s,password=%s where username=%s'
+SQL_USER_EXIST_JUDEG = 'select count(username) from user where username=%s' 
+SQL_USER_EXIST_COUNT= 'select count(*) from user' 
 
 def load_users(path):
     fhandler = open(path, 'rt')
@@ -92,6 +94,25 @@ def get_single_message(username):
     rt_list = cur.fetchall()
     cur.close()
     conn.close()
+    return rt_list
+
+def get_exist_users_count():
+    conn = MySQLdb.connect(host=HOST,port=PORT, user=USER, passwd=PASSWD, db=DB, charset=CHARSET)
+    cur = conn.cursor()
+    cur.execute(SQL_USER_EXIST_COUNT)
+    rt_list = cur.fetchone()[0]
+    cur.close()
+    conn.close()
+    return rt_list
+
+def judege_user_exist(username):
+    conn = MySQLdb.connect(host=HOST,port=PORT, user=USER, passwd=PASSWD, db=DB, charset=CHARSET)
+    cur = conn.cursor()
+    cur.execute(SQL_USER_EXIST_JUDEG,(username,))
+    rt_list = cur.fetchone()[0]
+    cur.close()
+    conn.close()
+    print('rt_list',rt_list)
     return rt_list
 
 def save_message(username,title,content):

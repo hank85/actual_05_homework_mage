@@ -6,23 +6,6 @@
     </head>
     <body>
         <h1>用户信息修改</h1>
-        <h3>{{ messages.username }}用户当前信息：</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>name</th>
-                    <th>age</th>
-                    <th>tel</th>
-                </tr>
-            </thead>
-            <tbody>
-                    <tr>
-                        <td>{{ messages.username }}</td>
-                        <td>{{ messages.age}}</td>
-                        <td>{{ messages.tel}}</td>
-                    </tr>
-            </tbody>
-        </table>
         <h3>修改信息：</h3>
         {{ messages.data_error }}
         <form action="/user/modify_user/" method="POST">
@@ -32,9 +15,9 @@
             <input type="hidden" name="password" value="{{ messages.password }}"/> <br> </br>
             <label>Age:</label> <input type="text" name="age" value="{{ messages.age }}" placeholder="请输入年龄"/> <br> </br>
             <label>Tel:</label> <input type="text" name="tel" value="{{ messages.tel }}" placeholder="请输入手机号码"/> <br> </br>
-            <input type="submit" value='调♂教'/>
+            <input type="submit" value='确定'/>
             <a href="/user/list_user/">
-                <input type="button" value="放♂置" onclick="window.location.href('/user/list_user/')">
+                <input type="button" value="取消" onclick="window.location.href('/user/list_user/')">
             </a>
         </form>
     </body>
