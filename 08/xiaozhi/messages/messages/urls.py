@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^online/', include('online.urls', namespace="online")),
     url(r'^user/', include('user.urls', namespace="user")),
+    url(r'^log/', include('log.urls', namespace="log")),
 
 ]
