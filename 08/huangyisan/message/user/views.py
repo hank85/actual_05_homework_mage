@@ -109,8 +109,8 @@ def add_user(request):
     return render(request,'user/add.html')
 
 def handle_error(request,error_message,kind_error,url,context):
+    #不同context类型，进行不同操作。
     if type(context) is dict:
-        print('这是个字典')
         context[kind_error] = error_message
         context={'messages':context}
     elif type(context) is tuple:
