@@ -56,7 +56,8 @@ def dump_users(path, users):
 
 def validate_login(name, password):
     conn = MySQLdb.connect(host=HOST,port=PORT, user=USER, passwd=PASSWD, db=DB, charset=CHARSET)
-    cur = conn.cursor()
+    #使用dict存储，之后用于添加session
+    cur = conn.cursor(DictCursor)
     cur.execute(SQL_USER_LOGIN,(name,password))
     line= cur.fetchone()
     cur.close()

@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from . import models
-login_user=''
 # Create your views here.
 def require_login(request):
     return render(request, 'user/login.html')
@@ -10,9 +9,10 @@ def login(request):
     username = request.POST.get('username', '')
     password = request.POST.get('password', '')
     rt = models.validate_login(username, password)
+    print(rt)
     if rt:
-        global login_user
-        login_user = username
+        #session
+        request.session['user'] = rt
         return HttpResponseRedirect('/user/list_user/')
     else:
         context = {'error':'用户名或密码错误','username':username,'password':password}
@@ -30,6 +30,8 @@ def list_user(request):
             return add_user(request)
         else:
     '''
+    if request.session.get('user') is None:
+        return HttpResponseRedirect('/user/require_login/')
     context = {'messages':models.get_messages()}
     return render(request, 'user/list.html',context)
 
@@ -52,6 +54,8 @@ def edit_user(request):
     #if login_user == '':
     #    return unauth_error(request)
     #else:
+    if request.session.get('user') is None:
+        return HttpResponseRedirect('/user/require_login/')
     username = request.GET.get('username','')
     user_info = models.get_single_message(username)[0]
     age = user_info.get('age')
