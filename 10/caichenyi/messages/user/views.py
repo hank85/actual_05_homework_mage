@@ -96,7 +96,7 @@ def view_user(request):
     if request.session.get('user') is None:
         return HttpResponseRedirect('/user/require_login/')
     uid = request.GET.get('id', '')
-    form = ViewUser(request.POST)
+    form = ViewUser()
     return render(request, 'user/view.html', {'form': form, 'id': uid})
     # uid = request.GET.get('id', '')
     # user = models.User.get_by_id(uid)
