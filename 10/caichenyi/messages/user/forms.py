@@ -61,7 +61,6 @@ class ViewUser(forms.Form):
 
     def clean(self):
         cleaned_data = super(ViewUser, self).clean()
-        uid = cleaned_data.get('id', '')
         username = cleaned_data.get('username', '')
         tel = cleaned_data.get('tel', '')
         age = cleaned_data.get('age', '')
@@ -73,3 +72,16 @@ class ViewUser(forms.Form):
             raise forms.ValidationError("用户已存在")
 
         return cleaned_data
+
+
+class ViewPassword(forms.Form):
+    password = forms.CharField(widget=forms.PasswordInput, label="密码", required=False, error_messages={'required': '输入不能为空'})
+
+    def clean(self):
+        cleaned_date = super(ViewPassword, self).clean()
+        password = cleaned_date.get('password', '')
+        if len(password) < 8:
+            raise forms.ValidationError('密码长度不能少于8位')
+
+        return cleaned_date
+

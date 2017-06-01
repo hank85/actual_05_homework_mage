@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 
 from . import models
-from .forms import LoginForm, CreatUser, ViewUser
+from .forms import LoginForm, CreatUser, ViewUser, ViewPassword
 from utils import crypt
 
 # Create your views here.
@@ -67,7 +67,6 @@ def save_user(request):
         user = models.User2(username=form.cleaned_data['username'], \
                             password=crypt.CryptUtils.md5(form.cleaned_data['password']), \
                             tel=form.cleaned_data['tel'], age=form.cleaned_data['age'])
-        print(user)
         user.save()
         return HttpResponseRedirect('/user/list_user/')
     else:
@@ -106,16 +105,11 @@ def modify_user(request):
     if request.session.get('user') is None:
         return HttpResponseRedirect('/user/require_login/')
     uid = request.POST.get('id', '')
-    print(uid)
     form = ViewUser(request.POST)
     if form.is_valid():
         models.User2.objects.filter(pk=uid).update(username=form.cleaned_data['username'], \
                                                    tel=form.cleaned_data['tel'], \
                                                    age=form.cleaned_data['age'])
-        # user = models.User2.objects.get(pk=_id)
-        # user.username = form.cleaned_data['username']
-        # user.tel = form.cleaned_data['tel']
-        # user.age = form.cleaned_data['age']
         return HttpResponseRedirect('/user/list_user/')
     else:
         return render(request, 'user/view.html', {'form': form, 'id': uid})
@@ -142,6 +136,26 @@ def modify_user(request):
     # context['error'] = error
     # context['user'] = user
     # return render(request, 'user/view.html', context)
+
+
+def view_password(request):
+    if request.session.get('user') is None:
+        return HttpResponseRedirect('/user/require_login/')
+    uid = request.GET.get('id', '')
+    form = ViewPassword()
+    return render(request, 'user/view_pwd.html', {'form': form, 'id': uid})
+
+
+def modify_password(request):
+    if request.session.get('user') is None:
+        return HttpResponseRedirect('/user/require_login/')
+    uid = request.POST.get('id', '')
+    form = ViewPassword(request.POST)
+    if form.is_valid():
+        models.User2.objects.filter(pk=uid).update(password=crypt.CryptUtils.md5(form.cleaned_data['password']))
+        return HttpResponseRedirect('/user/list_user/')
+    else:
+        return render(request, 'user/view_pwd.html', {'form': form, 'id': uid})
 
 
 def logout(request):
