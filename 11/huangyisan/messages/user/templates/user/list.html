@@ -2,14 +2,28 @@
 <html>
     <head>
         <meta charset="utf-8" />
+            <!-- 最新編譯和最佳化的 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- 選擇性佈景主題 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <!-- 最新編譯和最佳化的 JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
         <title>用户列表</title>
+        <style type="text/css">
+
+        </style>
     </head>
     <body>
-        <a href="/user/create_user/">添加</a>
-        欢迎 {{ request.session.user.username }},<a href="/user/logout/">退出登录</a>
-        <table>
+
+        <p align="right">
+        欢迎 {{ request.session.user.username }} <a href="/user/logout/">退出登录</a>
+        </p>
+        <div class="container">
+        <table class="table table-striped table-bordered table-condensed">
+            <h1 align="center">用户信息列表</h1>
             <thead>
-                <tr>
+                <tr class="success">
                     <th>名字</th>
                     <th>年龄</th>
                     <th>电话号码</th>
@@ -31,5 +45,11 @@
                 {% endfor %}
             </tbody>
         </table>
+            <p align="right">
+
+                <a class="btn btn-primary btn-lg" href="/user/create_user/" role="button">添加信息</a>
+
+            </p>
+    </div>
     </body>
 </html>

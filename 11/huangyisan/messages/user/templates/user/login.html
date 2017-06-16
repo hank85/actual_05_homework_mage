@@ -3,8 +3,23 @@
     <head>
         <meta charset="utf-8" />
         <title>用户登录</title>
+        <style type="text/css">
+            body{
+                background-color: #98969c;
+                margin-left:20%;
+                margin-right:20%;
+                #border:2px dotted black;
+                padding:10px 10px 10px 10px;
+                font-family:sans-serif;
+            }
+            div{ margin:0 auto;
+                width:400px;
+                height:100px;
+            }
+        </style>
     </head>
     <body>
+    <div style="color:#90ccff" class="center">
         <h1>用户登录</h1>
         <form action="/user/login/" method="POST" novalidate="novalidate">
             {% csrf_token %}
@@ -15,7 +30,11 @@
             <table>
                 {{ form.as_table }}
             </table>
-            <input type="submit" value="登录"/><br/><br/>
+            <p style="margin-left:40%">
+
+            <input type="submit"  value="登录" />
+            </p>
         </form>
+    </div>
     </body>
 </html>
