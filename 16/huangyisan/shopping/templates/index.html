@@ -219,6 +219,11 @@
 						</div>
 					</div>
 					<script type="text/javascript">
+						jQuery('#register').on('show.bs.modal',function () {
+							var modal=jQuery(this);
+							modal.find('input[type=text]').val("");
+							modal.find('input[type=password]').val("")
+                        });
 						jQuery('.account-primary').on('click',function () {
 							var args = jQuery('.form-message').serializeArray();
 							jQuery.get("{% url 'account:register' %}", args,function (data) {
