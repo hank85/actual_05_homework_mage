@@ -136,7 +136,7 @@ class ResetPasswordView(FormView):
                 user = form.cached_user
                 validkey = user.userext.gen_validkey()
                 user.userext.validkey = validkey
-                user.userext.exprie_time = timezone.now()
+                user.userext.exprie_time = timezone.now() + datetime.timedelta(days=1)
                 user.userext.save()
                 content = '欢迎使用[CaiCY的商城], 请点击此处进行重置密码: http://192.168.6.15:8000/account/reset_password_confirm/?username={username}&validkey={validkey}'.format(username=user.username, validkey=validkey)
                 send_mail('[CaiCY的商城]用户重置密码', content, settings.EMAIL_HOST_USER, [user.email])
@@ -157,7 +157,7 @@ class ResetPasswordConfirmView(FormView):
     def get(self, request, *args, **kwargs):
         username = request.GET.get('username', '')
         validkey = request.GET.get('validkey', '')
-
+        form = ResetPasswordConfirmForm(initial={'username': username, 'validkey': validkey})
         try:
             user = User.objects.get(username=username)
             if user.userext.exprie_time < timezone.now():
@@ -172,8 +172,7 @@ class ResetPasswordConfirmView(FormView):
         except ObjectDoesNotExist as e:
             pass
             # 跳转页面
-
-        return render(self.request, self.template_name, {'form': self.form_class})
+        return render(self.request, self.template_name, {'form': form})
 
     def get_initial(self):
         return self.request.GET

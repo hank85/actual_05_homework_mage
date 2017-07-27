@@ -120,10 +120,10 @@ class ResetPasswordForm(forms.Form):
 
 
 class ResetPasswordConfirmForm(forms.Form):
-    username = forms.CharField(widget=forms.TextInput, required=False)
-    validkey = forms.CharField(widget=forms.TextInput, required=False)
-    # username = forms.CharField(widget=forms.HiddenInput, required=False)
-    # validkey = forms.CharField(widget=forms.HiddenInput, required=False)
+    # username = forms.CharField(widget=forms.TextInput, required=False)
+    # validkey = forms.CharField(widget=forms.TextInput, required=False)
+    username = forms.CharField(widget=forms.HiddenInput, required=False)
+    validkey = forms.CharField(widget=forms.HiddenInput, required=False)
     password = forms.CharField(widget=forms.PasswordInput, error_messages={'required': '密码不能为空'})
     password2 = forms.CharField(widget=forms.PasswordInput, required=False)
 
